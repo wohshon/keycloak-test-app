@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+    		<groupId>dev.snowdrop</groupId>
+    		<artifactId>snowdrop-dependencies</artifactId>
+    		<version>2.3.4.Final-redhat-00001</version>
+	</parent>
+	<groupId>com.redhat.apps</groupId>
+	<artifactId>app1</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>app1</name>
+	<description>Sample front end app on spring mvc</description>
+
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+<dependencyManagement>
+<dependencies>
+<!-- https://mvnrepository.com/artifact/org.keycloak.bom/keycloak-adapter-bom -->
+<dependency>
+    <groupId>org.keycloak.bom</groupId>
+    <artifactId>keycloak-adapter-bom</artifactId>
+    <version>9.0.9.redhat-00001</version>
+    <type>pom</type>
+	<scope>import</scope>
+</dependency>
+</dependencies>
+</dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.keycloak/keycloak-spring-boot-starter -->
+<dependency>
+    <groupId>org.keycloak</groupId>
+    <artifactId>keycloak-spring-boot-starter</artifactId>
+    <version>9.0.9.redhat-00001</version>
+</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+    <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-jasper</artifactId>
+        <scope>provided</scope>
+    </dependency>
+	        <!-- JSTL Dependency -->
+        <dependency>
+            <groupId>javax.servlet.jsp.jstl</groupId>
+            <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+				
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+		        <executions>
+            			<execution>
+                			<goals>
+                    				<goal>repackage</goal>
+                			</goals>
+            			</execution>
+        		</executions>
+        		<configuration>
+            			<redeploy>true</redeploy>
+        		</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
