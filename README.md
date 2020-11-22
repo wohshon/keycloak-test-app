@@ -33,19 +33,26 @@
     - add keycloak adaptor bom 
 - `application.properties`
     - add in the keycloak related settings to protect the urls, and the auth server endpoints  
-- in `AppController` of app1, the access token will be stored in session after initial successful login. When we are invoking the service at service1, the access token is retrieved for credential delegation purposes.
+- in `AppController` of app1, the access token will be stored in session after initial successful login. When we are invoking the service at service1, the access token is retrieved for credential delegation purposes. Once we have the token, we will call the service via a bearer token.
+
 
 ### RHSSO settings (Screen shots)
 
 - client for web app, app1-client
 
+This is via the Authorization Code flow
+
 ![app1-client](img/rhsso-app1-client.png)
 
 - client for web app, springboot-service1-client
 
+This is via the Client Credentials flow. In our flow, the app will used the current access token as a bearer token to call the 2nd service
+
 ![service1-client](img/rhsso-service1-client.png)
 
 - users and roles 
+
+Realm roles, so it is visible to both clients.
 
 ![users](img/rhsso-users.png)
 
