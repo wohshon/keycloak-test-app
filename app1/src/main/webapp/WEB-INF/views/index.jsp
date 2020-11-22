@@ -13,7 +13,7 @@
 <body>
 RH SSO test page
 <div>
-    <a href="/home.page">home</a>
+    <a href="/home.page"> service page (requires login) </a>
 </div>
 </body>
 </html>

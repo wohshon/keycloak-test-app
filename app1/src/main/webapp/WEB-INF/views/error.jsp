@@ -11,14 +11,9 @@
 <head>
 </head>
 <body>
-<a href="/api/service1">service1</a>  (login via sso to service1 in another application)
+You hit an error
 <div>
-    ${REQ_ACTION}
-</div>
---------------------------------------------------------------
-<div>
-    <p>Hello ${REQ_PRINCIPAL}</p>
-    <a href="/logout.page">logout</a>
+    <a href="/">home</a>
 </div>
 </body>
 </html>
