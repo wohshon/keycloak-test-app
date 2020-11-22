@@ -44,7 +44,7 @@ This is via the Authorization Code flow
 
 ![app1-client](img/rhsso-app1-client.png)
 
-- client for web app, springboot-service1-client
+- client for rest service app, springboot-service1-client
 
 This is via the Client Credentials flow. In our flow, the app will used the current access token as a bearer token to call the 2nd service
 
