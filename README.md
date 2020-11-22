@@ -4,7 +4,7 @@
 - app1: 
     - web based springboot mvc app, 
     - open endpoint at root context, `/`
-    - protected jsp at `/home.page`, which has displays url to invoke a service hosted at `service1` app
+    - protected jsp at `/home.page`, which displays an url to invoke a service hosted at `service1` app
 - service1: 
     - springboot rest service, protected endpoint at `/api/product/*`, returns an arbituary `product` json payload.
 - service2: not used for now
@@ -33,7 +33,7 @@
     - add keycloak adaptor bom 
 - `application.properties`
     - add in the keycloak related settings to protect the urls, and the auth server endpoints  
-
+- in `AppController` of app1, the access token will be stored in session after initial successful login. When we are invoking the service at service1, the access token is retrieved for credential delegation purposes.
 
 ### RHSSO settings (Screen shots)
 
